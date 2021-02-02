@@ -4,6 +4,8 @@ name: Frontend Build Test
 # 起動のタイミング
 # 今回はmasterブランチへのpush
 on:
+  pull_request:
+    branches: [main]
   push:
     branches:
       - main
