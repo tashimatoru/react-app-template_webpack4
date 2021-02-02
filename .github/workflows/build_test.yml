@@ -6,10 +6,12 @@ on:
   workflow_dispatch:
     branches:
       - main
+      - develop
   # プルリク実行
   pull_request:
     branches:
       - main
+      - develop
   # ブランチにpushしたら実行
   push:
     branches:
