@@ -7,6 +7,8 @@ class Hoge extends React.Component {
     super(props);
     this.state = {
     };
+
+    テストで失敗してよね
   }
 
   render() {
@@ -20,6 +22,7 @@ class Hoge extends React.Component {
         <p>
           <Link href="/search?hoge=fuga">search</Link>
         </p>
+        <Hoge>テストで失敗してほしい</Hoge>
       </React.Fragment>
     );
   }
