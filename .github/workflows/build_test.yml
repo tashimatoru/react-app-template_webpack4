@@ -6,7 +6,7 @@ name: Frontend Build Test
 on:
   push:
     branches:
-      - develop
+      - main
 
 # ジョブの定義
 jobs:
