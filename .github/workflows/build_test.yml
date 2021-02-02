@@ -1,11 +1,16 @@
 # ワークフローの名前
 name: Frontend Build Test
 
-# 起動のタイミング
-# 今回はmasterブランチへのpush
 on:
+  # 手動実行
+  workflow_dispatch:
+    branches:
+      - main
+  # プルリク実行
   pull_request:
-    branches: [main]
+    branches:
+      - main
+  # ブランチにpushしたら実行
   push:
     branches:
       - main
