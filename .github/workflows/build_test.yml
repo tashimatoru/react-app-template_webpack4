@@ -10,12 +10,11 @@ on:
   # プルリク実行
   pull_request:
     branches:
-      - main
       - develop
   # ブランチにpushしたら実行
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
 
 # ジョブの定義
 jobs:
@@ -45,6 +44,6 @@ jobs:
       working-directory: ./frontend
       run: |
         npm ci
-        npm run build
+        npm run build:test
       env:
         CI: true

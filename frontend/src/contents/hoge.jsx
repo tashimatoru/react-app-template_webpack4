@@ -7,10 +7,7 @@ class Hoge extends React.Component {
     super(props);
     this.state = {
     };
-
-    テストで失敗してよね
   }
-
   render() {
     return (
       <React.Fragment>
