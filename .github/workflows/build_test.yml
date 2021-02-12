@@ -7,14 +7,14 @@ on:
     branches:
       - main
       - develop
-  # プルリク実行
-  pull_request:
-    branches:
-      - develop
-  # ブランチにpushしたら実行
-  #push:
+  ## プルリク実行
+  #pull_request:
   #  branches:
-  #    - main
+  #    - develop
+  # ブランチにpushしたら実行
+  push:
+    branches:
+      - main
 
 # ジョブの定義
 jobs:
@@ -47,3 +47,15 @@ jobs:
         npm run build:test
       env:
         CI: true
+
+    - name: git config
+      run: |
+        git config --local user.email "tashima.toru@gmail.com"
+        git config --local user.name "田島 徹"
+    - name: Commit files
+      working-directory: ./frontend/build
+      run: |
+        git add .
+        git commit -m "frontend build `git show -s --format=%h`" -a
+        git pull
+        git push origin release
