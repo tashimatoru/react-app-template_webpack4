@@ -5,16 +5,11 @@ on:
   # 手動実行
   workflow_dispatch:
     branches:
-      - main
       - develop
-  ## プルリク実行
-  #pull_request:
+  ## ブランチにpushしたら実行
+  #push:
   #  branches:
-  #    - develop
-  # ブランチにpushしたら実行
-  push:
-    branches:
-      - main
+  #    - main
 
 # ジョブの定義
 jobs:
@@ -55,10 +50,10 @@ jobs:
           git config --local user.email "tashima.toru@gmail.com"
           git config --local user.name "田島 徹"
 
-      # ビルドしたjsをreleaseブランチにコミット
+      # ビルドしたjsをdevelopブランチにコミット
       - name: git commit push
         working-directory: ./frontend/build
         run: |
           git add . -f
           git commit -m "frontend build `git show -s --format=%h`" -a
-          git push
+          git push origin develop
