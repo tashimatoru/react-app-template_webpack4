@@ -58,4 +58,4 @@ jobs:
           git add . -f
           git commit -m "frontend build `git show -s --format=%h`" -a
           git pull
-          git push origin develop
+          git push origin main
