@@ -31,7 +31,7 @@ jobs:
     steps:
 
       # チェックアウト
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       # 使用するnodeのバージョンを指定
       - name: Use Node.js ${{ matrix.node-version }}
