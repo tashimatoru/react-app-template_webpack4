@@ -60,5 +60,5 @@ jobs:
         working-directory: ./frontend/build
         run: |
           git add . -f
-          git checkout release
-          
+          git commit -m "frontend build `git show -s --format=%h`" -a
+          git push origin develop
