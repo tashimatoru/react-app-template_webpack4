@@ -31,7 +31,7 @@ jobs:
     steps:
 
       # チェックアウト
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
       # 使用するnodeのバージョンを指定
       - name: Use Node.js ${{ matrix.node-version }}
@@ -61,4 +61,3 @@ jobs:
         run: |
           git add . -f
           git commit -m "frontend build `git show -s --format=%h`" -a
-          git push origin release
