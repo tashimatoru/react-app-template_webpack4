@@ -30,32 +30,35 @@ jobs:
     # 各ステップの実行
     steps:
 
-    # チェックアウト
-    - uses: actions/checkout@v1
+      # チェックアウト
+      - uses: actions/checkout@v1
 
-    # 使用するnodeのバージョンを指定
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      # 使用するnodeのバージョンを指定
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    # パッケージのインストールとアプリのビルド
-    - name: install and build
-      working-directory: ./frontend
-      run: |
-        npm ci
-        npm run build:test
-      env:
-        CI: true
+      # パッケージのインストールとアプリのビルド
+      - name: install and build
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm run build:test
+        env:
+          CI: true
 
-    - name: git config
-      run: |
-        git config --local user.email "tashima.toru@gmail.com"
-        git config --local user.name "田島 徹"
-    - name: Commit files
-      working-directory: ./frontend/build
-      run: |
-        git add . -f
-        git commit -m "frontend build `git show -s --format=%h`" -a
-        git pull
-        git push origin release
+      # git config
+      - name: git config
+        run: |
+          git config --local user.email "tashima.toru@gmail.com"
+          git config --local user.name "田島 徹"
+
+      # ビルドしたjsをreleaseブランチにコミット
+      - name: git commit push
+        working-directory: ./frontend/build
+        run: |
+          git add . -f
+          git commit -m "frontend build `git show -s --format=%h`" -a
+          git pull
+          git push origin release
