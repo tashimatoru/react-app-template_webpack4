@@ -12,7 +12,7 @@ class Index extends React.Component {
   render() {
     return (
       <React.Fragment>
-        Index
+        Index(main)
         <hr/>
         <p>
           <Link href="/hoge">hoge</Link>
