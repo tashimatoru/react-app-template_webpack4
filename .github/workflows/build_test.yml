@@ -59,8 +59,7 @@ jobs:
       - name: git commit push
         working-directory: ./frontend/build
         run: |
-          git checkout release
           git add . -f
           git commit -m "frontend build `git show -s --format=%h`" -a
-          git pull
+          git pull origin release
           git push origin release
