@@ -5,6 +5,7 @@ on:
   # 手動実行
   workflow_dispatch:
     branches:
+      - main
       - develop
   ## ブランチにpushしたら実行
   #push:
@@ -56,4 +57,5 @@ jobs:
         run: |
           git add . -f
           git commit -m "frontend build `git show -s --format=%h`" -a
+          git pull
           git push origin develop
