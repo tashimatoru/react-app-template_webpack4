@@ -60,4 +60,5 @@ jobs:
         working-directory: ./frontend/build
         run: |
           git add . -f
-          git checkout origin master
+          git checkout release
+          
