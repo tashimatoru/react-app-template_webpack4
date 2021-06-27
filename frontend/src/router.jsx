@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Wrap from 'modules/wrap';
+import Wrap from 'wrap';
 
-const Index   = lazy(() => import('contents/index'));
-const Hoge    = lazy(() => import('contents/hoge'));
-const Search  = lazy(() => import('contents/search'));
+const Index    = lazy(() => import('contents/index'));
+const Hoge     = lazy(() => import('contents/hoge'));
+const Error404 = lazy(() => import('contents/error/error404'));
 
 const Router = props => {
   return (
@@ -12,7 +12,7 @@ const Router = props => {
       <Wrap>
         <Suspense
           fallback={
-            <div>loading</div>
+            <div>now loading</div>
           }
         >
           <Switch>
@@ -26,10 +26,9 @@ const Router = props => {
               path="/hoge"
               render={(props) => <Hoge />}
             />
+
             <Route
-              exact
-              path="/search"
-              render={(props) => <Search />}
+              component={Error404}
             />
           </Switch>
         </Suspense>
