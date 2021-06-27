@@ -99,13 +99,12 @@ module.exports = {
       ]
     },
 
-    disableHostCheck: true,
     watchContentBase: true,
     disableHostCheck: true,
     hot: true,
     open: true,
     openPage: "",
-    host: "localhost",
-    port: 80,
+    host: "0.0.0.0",
+    port: 8000,
   }
 }

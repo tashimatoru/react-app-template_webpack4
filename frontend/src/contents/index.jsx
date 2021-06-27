@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import Link from 'modules/mui/Link';
+import {Link} from "react-router-dom";
 
 class Index extends React.Component {
   constructor(props) {
@@ -12,13 +12,10 @@ class Index extends React.Component {
   render() {
     return (
       <React.Fragment>
-        Index(main v3)
+        Index
         <hr/>
         <p>
-          <Link href="/hoge">hoge</Link>
-        </p>
-        <p>
-          <Link href="/search?hoge=fuga">search</Link>
+          <Link to="/hoge">Hoge</Link>
         </p>
       </React.Fragment>
     );

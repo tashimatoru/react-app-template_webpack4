@@ -1,8 +1,8 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import Link from 'modules/mui/Link';
+import {Link} from "react-router-dom";
 
-class Search extends React.Component {
+class Error404 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,13 +12,13 @@ class Search extends React.Component {
   render() {
     return (
       <React.Fragment>
-        Search
+        Error404
         <hr/>
         <p>
-          <Link href="/">index</Link>
+          <Link to="/">Index</Link>
         </p>
         <p>
-          <Link href="/hoge">hoge</Link>
+          <Link to="/hoge">Hoge</Link>
         </p>
       </React.Fragment>
     );
@@ -26,7 +26,7 @@ class Search extends React.Component {
 };
 
 // defaultProps
-Search.defaultProps = {
+Error404.defaultProps = {
 };
 
-export default withRouter(Search);
+export default withRouter(Error404);

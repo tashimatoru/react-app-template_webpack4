@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router';
-import Link from 'modules/mui/Link';
+import {Link} from "react-router-dom";
 
 class Hoge extends React.Component {
   constructor(props) {
@@ -14,12 +14,8 @@ class Hoge extends React.Component {
         Hoge
         <hr/>
         <p>
-          <Link href="/">index</Link>
+          <Link to="/">Index</Link>
         </p>
-        <p>
-          <Link href="/search?hoge=fuga">search</Link>
-        </p>
-        <Hoge>テストで失敗してほしい</Hoge>
       </React.Fragment>
     );
   }
