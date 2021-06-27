@@ -18,3 +18,11 @@ $ npm run start
 
 http://localhost:8000/
 にアクセスする
+
+## ビルド
+
+```
+$ cd frontned
+$ npm ci
+$ npm run build:production
+```
