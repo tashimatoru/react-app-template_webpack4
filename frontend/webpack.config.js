@@ -75,6 +75,16 @@ module.exports = {
           }
         ],
       },
+      // binary
+      {
+        test: [
+          /\.(png|jpg|gif|ttf|svg|eot|woff)$/
+        ],
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+        },
+      },
     ],
   },
 
